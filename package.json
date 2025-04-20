@@ -1,8 +1,33 @@
+// survey-app/package.json
 {
+  "name": "survey-app-root",
+  "version": "1.0.0",
+  "description": "Survey app with React frontend and Node/Express backend",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js", // Runs the backend server
+    "build": "cd client && npm install && npm run build", // Installs client deps and builds React app
+    "install-server": "npm install", // Installs backend deps (express, mongoose, etc.)
+    "heroku-postbuild": "npm run install-server && npm run build", // Common script name Render might recognize, does both installs + build
+    "dev:server": "nodemon server.js", // For local backend development (requires nodemon: npm install -g nodemon)
+    "dev:client": "cd client && npm start" // For local frontend development
+  },
+  "keywords": [
+    "react",
+    "node",
+    "express",
+    "mongodb",
+    "survey"
+  ],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
-    "dotenv": "^16.5.0",
-    "express": "^5.1.0",
-    "mongoose": "^8.13.2"
+    "dotenv": "^16.5.0", // Example version, use latest stable
+    "express": "^5.1.0", // Example version, use latest stable
+    "mongoose": "^8.13.2" // Example version, use latest stable Mongoose v7+
+  },
+  "engines": {
+    "node": "18.x" // Specify Node.js version for Render
   }
 }
