@@ -9,7 +9,8 @@
     "install-server": "npm install",
     "heroku-postbuild": "npm run install-server && npm run build",
     "dev:server": "nodemon server.js",
-    "dev:client": "cd client && npm start"
+    "dev:client": "cd client && npm start",
+"all": "npm run build && npm start"
   },
   "keywords": [
     "react",
